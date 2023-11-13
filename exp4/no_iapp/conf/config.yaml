@@ -1,0 +1,28 @@
+# Arch	                        Start Lr	Max Steps	Decay Steps
+# FullyConnectedArch	        1.00E-03	1500000	        15000	   
+# FourierNetArch                1.00E-03	400000	        7500	   
+# ModifiedFourierNetArch 	1.00E-03	400000	        7500	   
+# SirenArch                     2.00E-05	500000	        5000	   
+# DGMArch                       1.00E-03        1500000         15000           
+
+# WARNING: Setting "exact_continuity" to true or setting the arch
+# as "ModifiedFourierNetArch" increases the memory requirements of the 
+# problem. Batchsizes may need to be reduced for such cases.  
+
+defaults :
+  - modulus_default
+  - arch:
+      - fully_connected
+  - scheduler: exponential_lr 
+  - optimizer: adam
+  - loss: sum
+  - _self_
+
+jit: false
+
+
+training:
+  rec_results_freq : 5000
+  rec_constraint_freq: 100000
+  max_steps : 300000
+

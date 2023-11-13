@@ -1,0 +1,9 @@
+ Novamente, tentando reduzir erro máximo, agora usando ferramentas mais adequadas.
+ 
+ 
+ 
+ A- tem uma condição de dados inadqueada, sera bom para comparar com a adequada da proxima. Não deixei rodar muito, 300k.
+ 
+ 
+ 
+ 

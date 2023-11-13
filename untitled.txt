@@ -1,0 +1,132 @@
+Parametros
+300k steps
+10*10*10 data c1
+
+1-> Teste
+data c2 (n=30)
+data c1
+3000 k cada batch size
+fit nas duas primeiras ondas, frizz na ultima
+max err 0.9485715962946415
+mean err 0.0009159802379249988
+
+2->Teste
+data c2 (n=30)
+data c1
+6000  cada batch size
+Fitou o formato mas bem "fuzzy". Erro grande localizado.
+
+max err 0.8679503500461578
+mean err 0.0022487772291391547
+
+
+3->Teste
+sem data c2 (n=30)
+data c1 6000 batch size
+max err 0.9139793971553445
+mean err 0.0011178351744614002
+fit bom mas fuzzy no final
+
+*OBSERVADO QUE NAO ESTA USANDO BEM A PLACA NO TREINAMENTO AUMENTANDO BATCH SIZE
+
+4->Teste
+sem data c2 (n=30)
+data c1 30000 batch size
+
+
+Aumento no uso, mas ainda bem abixo 1gb de vram e 33% de gpu
+Ao longo do fit não pareceu a acelerar a convergencia, seria possivel um plot da convergencia por iteração?
+
+Fit bom, mas também fuzzy no final...
+max err 0.9237207360565662
+mean err 0.0016686814773357863
+a 1000
+
+
+
+-->Trocando c2 para colocar o u0 e w0 a partir do começo da "run"
+
+
+5->Teste
+c2 (n=30) **acho que esses results são inválidos
+data c1 e c2 3000 batch size
+
+
+Mais fuzzy no final e tambem meio.
+
+Fit bom, mas também fuzzy no final...
+max err 0.9237207360565662
+mean err 0.0016686814773357863
+
+
+
+6->Teste
+sem c2 (n=30)
+data c1 
+
+SEM PINN
+
+Bem menos fuzzy?! mas ajuste ainda não foi perfeito. Sera que o PINN causa essas variações??
+
+
+
+7->Teste
+c1 (n=100)
+data c1 
+
+SEM PINN
+
+Ajuste melhor, comparativo registrado dos resultados. Parece que c2 melhora!
+
+
+
+
+-
+8->Teste
+c1 (n=100)
+data c1 
+
+Pinn -> apenas constrait interior 1
+Imediatamente se nota que o custo do step de treinament aumenta bastante!
+
+
+Ajuste melhor, mas fuzzy!
+
+
+Tentando aumentar a rede para obter fit perfeito e parti dai
+
+Constraints 1k
+
+
+9-> 
+T=10*100
+C1 e C2 data
+Pinn so interior
+
+REsultados muito bons, salvo ao lado.
+
+
+Tentando aumentar a rede para obter fit perfeito e parti dai
+
+10-> 
+T=10*100
+C1 e C2 data
+Pinn interior + border
+
+Adicionar a border constraint causou melhoria no fit! Sera estocastico?
+
+->Para ambos acima o fit ja começou a ficar ideal no passo 100k
+
+
+11-> 
+T=10*100
+C1 e C2 data
+Sem Pinn 
+
+
+
+12->
+
+c1 e c2 3k
+pp 4k
+
